@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #ffffff;
+  --blue: #61dcfb;
+  --green: #04d361;
+  --yellow: #eba417;
+  --titles: #e1e1e6;
+  --texts: #a8a8b3;
+  --shape: #1f2729;
+  --background: #121414;
+}
+
+body {
+  background: var(--background);
+  color: var(--white);
+}
+
+body,
+input,
+textarea,
+select,
+button {
+  font: 400 1rem "Roboto", sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.title {
+  font-family: Roboto;
+  color: red;
+}

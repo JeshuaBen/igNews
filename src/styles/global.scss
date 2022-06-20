@@ -11,8 +11,21 @@
   --yellow: #eba417;
   --titles: #e1e1e6;
   --texts: #a8a8b3;
+  --gray-700: #29292e;
   --shape: #1f2729;
   --background: #121414;
+}
+
+@media (max-width: 1080px) {
+  html {
+    font-size: 93.75%;
+  }
+}
+
+@media (max-width: 720px) {
+  html {
+    font-size: 87.5%;
+  }
 }
 
 body {

@@ -26,11 +26,17 @@ export default NextAuth({
 
       try {
         await fauna.query(
-          q.Create(
-            // Onde Collection são as 'tabelas'
-            q.Collection("users"),
-            // Objeto que contém os dados que nós queremos inserir
-            { data: { userEmail } }
+          q.If(
+            q.Not(
+              q.Exists(q.Match(q.Index("user_by_email"), q.Casefold(userEmail)))
+            ),
+            q.Create(
+              // Onde Collection são as 'tabelas'
+              q.Collection("users"),
+              // Objeto que contém os dados que nós queremos inserir
+              { data: { userEmail } }
+            ),
+            q.Get(q.Match(q.Index("user_by_email"), q.Casefold(userEmail)))
           )
         );
         return true;
